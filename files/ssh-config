@@ -1,0 +1,9 @@
+Host *
+  ForwardAgent yes
+
+Host *.dork 172.17.*
+  User root
+  IdentityFile /etc/dork-keys/key
+  ForwardAgent yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null

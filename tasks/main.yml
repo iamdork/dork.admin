@@ -12,9 +12,9 @@
 
 
 - name: add dork user to sudoers
-  lineinfile:
-    line: "{{ admin_name }} ALL=(ALL) NOPASSWD: ALL"
-    dest: /etc/sudoers
+  template:
+    src: sudoer.j2
+    dest: /etc/sudoers.d/{{ admin_name }}
 
 - authorized_key:
     key: "{{ item }}"

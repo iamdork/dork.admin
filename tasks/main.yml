@@ -28,11 +28,9 @@
 - file:
     path: /home/{{ admin_name }}/.ssh/config.d
     owner: "{{ admin_name }}"
-    group: "{{ admin_name }}"
     state: directory
 
 - copy:
     src: ssh-config
     owner: "{{ admin_name }}"
-    group: "{{ admin_name }}"
     dest: /home/{{ admin_name }}/.ssh/config.d/dork.conf

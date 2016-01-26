@@ -7,3 +7,4 @@ Host *.dork 172.17.*
   ForwardAgent yes
   StrictHostKeyChecking no
   UserKnownHostsFile /dev/null
+  SendEnv GIT_AUTHOR_NAME GIT_AUTHOR_EMAIL GIT_COMMITTER_NAME GIT_COMMITTER_EMAIL

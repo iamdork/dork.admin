@@ -21,16 +21,19 @@
     user: "{{ admin_name }}"
   with_items: admin_ssh_keys
 
-- copy:
+- name: add ssh-config concatenation script to /etc/profile.d
+  copy:
     src: ssh-config.sh
     dest: /etc/profile.d/ssh-config.sh
 
-- file:
+- name: create .ssh/config.d directory for {{ admin_name }}
+  file:
     path: /home/{{ admin_name }}/.ssh/config.d
     owner: "{{ admin_name }}"
     state: directory
 
-- copy:
+- name: copy dork ssh config for {{ admin_name }}
+  copy:
     src: ssh-config
     owner: "{{ admin_name }}"
     dest: /home/{{ admin_name }}/.ssh/config.d/dork.conf
